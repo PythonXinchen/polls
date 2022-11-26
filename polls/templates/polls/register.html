@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<h1>用户注册</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>用户名: <input type="text" name="username" placeholder="用户名"></p>
+    <p>密码: <input type="password" name="password" placeholder="密码"><br>
+   <!-- <input type="submit" value="注册"> -->
+    <a>十分抱歉，该功能还未开发</a>
+    <a href="{% url 'login' %}">返回登录</a>
+    <a href="{% url 'index'%}">返回首页</a>
+</body>
+</html>

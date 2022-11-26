@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+	<h1>欢迎登录</h1>
+	<form action="/login/" method="post">
+	{% block message %}
+		<div class="alert alert-warning">{{ message }}</div>
+	{% endblock %}
+	<div class="form-group">
+	{% csrf_token %}
+		<p>
+			<label for="username">用户名:</label>
+			<input type="text" id="username" name="username" placeholder="用户名" autofocus required />
+		</p>
+		
+		<p>
+			<label for="password">密码</label>
+			<input type="password" id=password placeholder="密码" name="password" required>
+		</p>
+		<input type="submit" value="确定">
+		{% if message %}
+			<p>{{message}}</p>
+		{% endif %}
+	</form>
+	<a href="{% url 'register'%}">没有账号？点击注册</a>
+       <a href="{% url 'index'%}">返回首页</a>
+</body>
+</html>
